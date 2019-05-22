@@ -23,7 +23,7 @@ function updateHostName()
     $EXEC "echo -e \"127.0.0.1\t$NEW_HOSTNAME\" >> $HOSTS_TMP"
 
     echo "Set hostname in {{docker_container_name}} container"
-    $EXEC "hostname $NEW_HOSTNAME"
+    $EXEC "hostname '$NEW_HOSTNAME'"
     $EXEC "cat $HOSTS_TMP > $HOSTS"
 }
 
