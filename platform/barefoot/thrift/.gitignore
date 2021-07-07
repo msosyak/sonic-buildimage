@@ -1,0 +1,4 @@
+# Overwrite ignore 'platform/**/debian/*' in root directory.
+!**/debian/*
+
+thrift*

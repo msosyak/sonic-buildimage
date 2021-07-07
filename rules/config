@@ -10,7 +10,7 @@
 # SONIC_CONFIG_BUILD_JOBS - set number of jobs for parallel build.
 # Corresponding -j argument will be passed to make command inside docker
 # container.
-SONIC_CONFIG_BUILD_JOBS = 1
+SONIC_CONFIG_BUILD_JOBS = 6
 
 # SONIC_CONFIG_MAKE_JOBS - set number of parallel make jobs per package.
 # Corresponding -j argument will be passed to make/dpkg commands that build separate packages
@@ -74,7 +74,7 @@ SONIC_ROUTING_STACK = frr
 
 # ENABLE_SYNCD_RPC - build docker-syncd with rpc packages for testing purposes.
 # Uncomment to enable:
-# ENABLE_SYNCD_RPC = y
+ENABLE_SYNCD_RPC = y
 
 # Enable Origanization Extensions - Specific to the deployment scenarios of the Organization
 ENABLE_ORGANIZATION_EXTENSIONS = y
