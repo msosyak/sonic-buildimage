@@ -1,0 +1,17 @@
+# thrift package
+
+BFN_THRIFT_VERSION = 0.13.0
+
+BFN_LIBTHRIFT = libthrift_$(BFN_THRIFT_VERSION)_$(CONFIGURED_ARCH).deb
+$(BFN_LIBTHRIFT)_SRC_PATH = $(PLATFORM_PATH)/thrift
+SONIC_MAKE_DEBS += $(BFN_LIBTHRIFT)
+
+BFN_LIBTHRIFT_DEV = libthrift-dev_$(BFN_THRIFT_VERSION)_$(CONFIGURED_ARCH).deb
+$(eval $(call add_derived_package,$(BFN_LIBTHRIFT),$(BFN_LIBTHRIFT_DEV)))
+
+BFN_PYTHON_THRIFT = python-thrift_$(BFN_THRIFT_VERSION)_$(CONFIGURED_ARCH).deb
+$(eval $(call add_derived_package,$(BFN_LIBTHRIFT),$(BFN_PYTHON_THRIFT)))
+
+BFN_THRIFT_COMPILER = thrift-compiler_$(BFN_THRIFT_VERSION)_$(CONFIGURED_ARCH).deb
+$(eval $(call add_derived_package,$(BFN_LIBTHRIFT),$(BFN_THRIFT_COMPILER)))
+
